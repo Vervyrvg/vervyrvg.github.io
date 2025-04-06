@@ -1,4 +1,4 @@
-name: Build and Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 # Trigger the workflow on pushes to the master branch
 on:
@@ -6,7 +6,10 @@ on:
     branches:
       - master  # Adjust to 'main' if your default branch is 'main'
 
-# Define the job
+# Permissions required for deployment to GitHub Pages
+permissions:
+  contents: write  # Allows the workflow to push to the repository (e.g., to the gh-pages branch)
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest  # Use the latest Ubuntu runner
@@ -14,16 +17,16 @@ jobs:
     steps:
       # Step 1: Checkout the repository code
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Updated to the latest version of checkout action
 
-      # Step 2: Set up Node.js with a compatible version
+      # Step 2: Set up Node.js
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4  # Updated to the latest version of setup-node action
         with:
-          node-version: '18'  # Use Node.js 18 to match dependency requirements
+          node-version: '20'  # Use Node.js 20 to ensure compatibility with dependencies
           cache: 'npm'  # Cache npm dependencies to speed up future runs
 
-      # Step 3: Clear npm cache to avoid potential issues
+      # Step 3: Clear npm cache to avoid dependency issues
       - name: Clear npm cache
         run: npm cache clean --force
 
@@ -31,14 +34,15 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # Step 5: Build the site (adjust the command based on your project)
+      # Step 5: Build the site
       - name: Build
-        run: npm run build  # Replace with your actual build command (e.g., npm run build, npm run generate)
+        run: npm run build  # Adjust this command based on your project's build script
 
       # Step 6: Deploy to GitHub Pages
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4  # Updated to the latest version of gh-pages action
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
-          publish_dir: ./dist  # Adjust to the directory where your built files are (e.g., dist, build, public)
-          publish_branch: gh-pages  # The branch GitHub Pages will use
+          publish_dir: ./dist  # Adjust this to the directory where your built site files are (e.g., dist, build, or public)
+          publish_branch: gh-pages  # The branch where GitHub Pages will serve the site
+          keep_files: false  # Overwrite existing files in the gh-pages branch
