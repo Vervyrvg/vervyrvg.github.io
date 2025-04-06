@@ -1,11 +1,12 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
-# Trigger the workflow on pushes to the main branch
+# Trigger the workflow on pushes to the master branch
 on:
   push:
     branches:
-      - master  # Adjust this to match your default branch (e.g., main or master)
+      - master  # Adjust to 'main' if your default branch is 'main'
 
+# Define the job
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest  # Use the latest Ubuntu runner
@@ -15,23 +16,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js (if your site uses Node.js, e.g., for a static site generator)
+      # Step 2: Set up Node.js with a compatible version
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Specify the Node.js version
+          node-version: '18'  # Use Node.js 18 to match dependency requirements
+          cache: 'npm'  # Cache npm dependencies to speed up future runs
 
-      # Step 3: Install dependencies (if applicable)
+      # Step 3: Clear npm cache to avoid potential issues
+      - name: Clear npm cache
+        run: npm cache clean --force
+
+      # Step 4: Install dependencies
       - name: Install Dependencies
-        run: npm install  # Adjust this if you're using a different package manager like yarn
+        run: npm install
 
-      # Step 4: Build the site (if applicable)
+      # Step 5: Build the site (adjust the command based on your project)
       - name: Build
-        run: npm run build  # Adjust this based on your build command (e.g., for a static site generator)
+        run: npm run build  # Replace with your actual build command (e.g., npm run build, npm run generate)
 
-      # Step 5: Deploy to GitHub Pages
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
-          publish_dir: ./dist  # Adjust this to the directory where your built site files are (e.g., dist, build, or public)
+          publish_dir: ./dist  # Adjust to the directory where your built files are (e.g., dist, build, public)
+          publish_branch: gh-pages  # The branch GitHub Pages will use
