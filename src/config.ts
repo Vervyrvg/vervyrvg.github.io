@@ -14,7 +14,7 @@ export const SITE = {
 }
 
 export const ME = {
-    name: "Ing. Victor Eduardo Resendiz Villegas",
+    name: "Victor Eduardo Resendiz Villegas",
     profession: "Especialista, Administración e implementación de Soluciones en Ciberseguridad",
     profileImage: "pp2.png",
     profileFacts: [
