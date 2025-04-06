@@ -41,8 +41,4 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           branch: gh-pages
-          folder: dist
-
-      - name: Inform page URL
-        run: |
-          echo "Your site is live at https://Vervyrvg.github.io/"
+          folder:
