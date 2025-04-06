@@ -9,13 +9,13 @@ export const SITE = {
     lang: "en",
     favicon: "/favicon.png",
     repository: "https://github.com/vito8916/simple-portfolio.git",
-    author: "Victor Eduardo Resendiz Villegas",
+    author: "Ing. Victor Eduardo Resendiz Villegas",
     profile: "https://victoralvarado.dev/",
 }
 
 export const ME = {
-    name: "Victor Eduardo Resendiz Villegas",
-    profession: "Ing. Gestión, Administración e implementación de Soluciones en Ciberseguridad",
+    name: "Ing. Victor Eduardo Resendiz Villegas",
+    profession: "Especialista, Administración e implementación de Soluciones en Ciberseguridad",
     profileImage: "pp2.png",
     profileFacts: [
         {
