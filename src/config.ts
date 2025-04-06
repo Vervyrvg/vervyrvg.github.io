@@ -2,10 +2,10 @@ export const SITE = {
     website: "https://simple-portfolio.vicbox.dev", // replace this with your deployed domain
     title: "Portfolio",
     description: "A simple but beautiful portfolio created with Astro",
-    tags: ["portfolio", "cv", "Astro"],
+    tags: ["Portafolio", "cv", "Astro"],
     ogImage: "/og-image.webp",
     logo: "logo",
-    logoText: "Portfolio",
+    logoText: "Portafolio",
     lang: "en",
     favicon: "/favicon.png",
     repository: "https://github.com/vito8916/simple-portfolio.git",
@@ -15,7 +15,7 @@ export const SITE = {
 
 export const ME = {
     name: "Victor Eduardo Resendiz Villegas",
-    profession: "Software Engineer | Full Stack Developer",
+    profession: "Ing. Gestión, Administración e implementación de Soluciones en Ciberseguridad",
     profileImage: "pp2.png",
     profileFacts: [
         {
