@@ -1,7 +1,7 @@
 export const SITE = {
     website: "https://simple-portfolio.vicbox.dev", // replace this with your deployed domain
     title: "Portafolio",
-    description: "A simple but beautiful portfolio created with Astro",
+    description: "Portafolio creado por IO. Ing. Victor Eduardo Resendiz Villegas",
     tags: ["Portafolio", "cv", "Astro"],
     ogImage: "/og-image.webp",
     logo: "logo",
@@ -20,15 +20,15 @@ export const ME = {
     profileFacts: [
         {
             value: 8,
-            description: "Experiencia"
+            description: "Años de Experiencia"
         },
         {
             value: 5,
-            description: "Proyectos Completados"
+            description: "Proyectos culminados"
         },
         {
             value: 4,
-            description: "Cliente"
+            description: "Clientes"
         }
     ],
     contactInfo: {
