@@ -47,7 +47,7 @@ const workExperience:WorkExperience[] = [
         title: "Especialista, Administración e implementación de soluciones de seguridad DOC - SENTINEL",
         startDate: "2024-07-10",
         endDate: "2024-12-10",
-        company: "IQSEC S.A DE C.V.",
+        company: "IQSEC S.A DE C.V",
         location: "Mexico",
         description: "Migración de infraestructura de seguridad en sector gubernamental",
         goals: [
