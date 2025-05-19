@@ -44,15 +44,15 @@ interface WorkExperience {
  */
 const workExperience:WorkExperience[] = [
     {
-        title: "Frontend Developer",
-        startDate: "2020-03-10",
-        company: "Google Inc",
-        location: "United States",
-        description: "Developed and maintained web applications using React, NextJs, and Tailwind CSS.",
+        title: "Ing. Gestión, Administración e implementación de soluciones de seguridad SOC - SENTINEL",
+        startDate: "Julio 2024 - Diciembre 2024",
+        company: "IQSEC S.A DE C.V.",
+        location: "Mexico",
+        description: "Migración de infraestructura de seguridad en sector gubernamental",
         goals: [
-            "Developed and maintained web applications using React, NodeJs, and MongoDB.",
-            "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
-            "Created and maintained web applications using React, NodeJs, and MongoDB.",
+            "Ejecuté la migración y despliegue integral de un ecosistema Fortinet completo, incluyendo FortiGate, FortiAnalyzer (FAZ), FortiManager, FortiExtender, FortiSwitch, FortiAP, FortiClient, FortiWeb, FortiMail y FortiSandbox. Configuré políticas avanzadas de seguridad, VPNs, inspección profunda de paquetes (DPI), segmentación de red, control de acceso y autenticación multifactor. Personalicé la arquitectura para optimizar la protección, gestión centralizada, monitoreo en tiempo real y análisis avanzado de amenazas, asegurando alta disponibilidad y rendimiento en toda la infraestructura de red.",
+            "Automatizé los accesos privilegiados sin omitir la reguridad em base a la rotación diaria de credenciales, lo que redujo significativamente el riesgo de filtraciones y accesos no autorizados.  .",
+            "Gestioné la distribución de instaladores a través de Ivanti, configurando políticas para la entrega automática de software en los dispositivos finales, optimizando recursos y garantizando instalaciones eficientes sin interrupciones..",
         ],
         currentJob: true,
     },
