@@ -11,4 +11,8 @@ export const menu = [
         href: '/Certificaciones',
         label: 'Certificaciones',
     },
-]
+    {
+        href: '/Proyectos', // Nuevo enlace
+        label: 'Proyectos', // Texto que aparecerá en el menú
+    },
+];
