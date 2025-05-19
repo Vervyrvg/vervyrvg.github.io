@@ -15,7 +15,7 @@ export const SITE = {
 
 export const ME = {
     name: "Victor Eduardo Resendiz Villegas",
-    profession: "Especialista Administración e implementación de Soluciones en Ciberseguridad",
+    profession: "Ing. Gestión, Administración e implementación de Soluciones en Ciberseguridad - SOC",
     profileImage: "pp2.png",
     profileFacts: [
         {
