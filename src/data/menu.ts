@@ -1,18 +1,39 @@
+// src/data/menu.js - Estructura actualizada con submenús
 export const menu = [
     {
         href: '/',
         label: 'Inicio',
     },
     {
-        href: '/Experiencia',
         label: 'Experiencia',
+        hasDropdown: true,
+        children: [
+            {
+                href: '/experiencia/profesional',
+                label: 'Profesional',
+            },
+            {
+                href: '/experiencia/academica',
+                label: 'Académica',
+            }
+        ]
     },
     {
-        href: '/Certificaciones',
         label: 'Certificaciones',
+        hasDropdown: true,
+        children: [
+            {
+                href: '/certificaciones/tecnicas',
+                label: 'Técnicas',
+            },
+            {
+                href: '/certificaciones/profesionales',
+                label: 'Profesionales',
+            }
+        ]
     },
     {
-        href: '/Proyectos', // Nuevo enlace
-        label: 'Proyectos', // Texto que aparecerá en el menú
+        href: '/Proyectos',
+        label: 'Proyectos',
     },
 ];
