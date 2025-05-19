@@ -35,15 +35,48 @@ const pathname = Astro.url.pathname;
             <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
                 {
                     menu.map((item) => (
+                        item.hasDropdown ? (
+                            <li class="relative group">
+                                <button 
+                                    class="dropdown-button flex items-center py-2 px-3 md:p-0 rounded text-gray-900 dark:text-white hover:bg-gray-100 md:hover:bg-transparent"
+                                    aria-expanded="false"
+                                >
+                                    {item.label}
+                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg>
+                                </button>
+                                <div class="dropdown-menu hidden absolute z-10 md:group-hover:block font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400">
+                                        {item.children.map((child) => (
+                                            <li>
+                                                <a 
+                                                    href={child.href} 
+                                                    class:list={{
+                                                        ["block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"]: true,
+                                                        ["active-dropdown"]: pathname === child.href,
+                                                    }}
+                                                >
+                                                    {child.label}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </li>
+                        ) : (
                             <li>
                                 <a
-                                        href={item.href}
-                                        class:list={{
-                                            ["block py-2 px-3 rounded md:p-0"]: true,
-                                            ["active"]: pathname === item.href,
-                                        }}>{item.label}
+                                    href={item.href}
+                                    class:list={{
+                                        ["block py-2 px-3 rounded md:p-0"]: true,
+                                        ["active"]: pathname === item.href,
+                                    }}
+                                >
+                                    {item.label}
                                 </a>
                             </li>
+                        )
                     ))
                 }
             </ul>
@@ -66,21 +99,73 @@ const pathname = Astro.url.pathname;
         md:dark:text-primary-dark
         md:dark:bg-transparent
     }
+
+    .active-dropdown {
+        @apply
+        text-primary-light
+        bg-gray-100
+        
+        dark:text-primary-dark
+        dark:bg-gray-600
+    }
+    
+    /* Estilo para el hover del dropdown en dispositivos móviles */
+    @media (max-width: 768px) {
+        .dropdown-menu {
+            @apply static w-full;
+        }
+    }
 </style>
 
 <script>
-    function toggleNav() {
-        // Toggle menu
+    function setupNavigation() {
+        // Toggle menú principal
         const btnMenu = document.getElementById('btn-menu');
         const navbar = document.getElementById('navbar-sticky');
 
         btnMenu?.addEventListener('click', function () {
             navbar?.classList.toggle('hidden');
         });
+
+        // Toggle submenús en móvil
+        const dropdownButtons = document.querySelectorAll('.dropdown-button');
+        
+        dropdownButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Obtener el menú desplegable asociado al botón
+                const dropdownMenu = button.nextElementSibling;
+                
+                // Toggle del atributo aria-expanded
+                const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+                button.setAttribute('aria-expanded', !expanded);
+                
+                // Solo en móvil necesitamos alternar la visibilidad manualmente
+                if (window.innerWidth < 768) {
+                    dropdownMenu.classList.toggle('hidden');
+                }
+            });
+        });
+
+        // Cerrar todos los dropdowns cuando se hace clic fuera
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.group') && window.innerWidth < 768) {
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                        // Actualizar el aria-expanded del botón asociado
+                        const button = menu.previousElementSibling;
+                        if (button && button.classList.contains('dropdown-button')) {
+                            button.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+            }
+        });
     }
 
-    toggleNav();
+    // Ejecutar al cargar la página
+    setupNavigation();
 
-    // Runs on view transitions navigation
-    document.addEventListener("astro:after-swap", toggleNav);
+    // Ejecutar después de transiciones de vista en Astro
+    document.addEventListener("astro:after-swap", setupNavigation);
 </script>
