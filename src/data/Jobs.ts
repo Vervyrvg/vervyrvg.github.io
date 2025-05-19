@@ -44,10 +44,10 @@ interface WorkExperience {
  */
 const workExperience:WorkExperience[] = [
     {
-        title: "Especialista, Administración e implementación de soluciones de seguridad DOC - SENTINEL",
+        title: " Especialista en ciberseguridad: administración e implementación de soluciones de seguridad - Sentinel",
         startDate: "2024-07-10",
-        endDate: "2024-12-10",
-        company: "IQSEC S.A DE C.V",
+        endDate:   "2024-12-10",
+        company: "IQsec S.A DE C.V",
         location: "Mexico",
         description: "Migración de infraestructura de seguridad en sector gubernamental",
         goals: [
