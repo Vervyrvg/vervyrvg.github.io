@@ -1,210 +1,72 @@
 ---
-// component imports
-import {Icon} from "astro-icon/components";
+// Importaciones usadas (eliminadas las redundantes)
+import type { HTMLAttributes } from 'astro/types';
 
-// data imports
-import {menu} from "../data/menu";
+// Props tipadas
+interface Props extends HTMLAttributes<'nav'> {
+  logo?: string;
+}
 
-// config import
-import {SITE} from "../config";
-
-const pathname = Astro.url.pathname;
+const { logo, ...attrs } = Astro.props;
 ---
 
-<nav class="bg-white dark:bg-n700 fixed w-full z-20 top-0 start-0" id="menu">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <!-- Logo -->
-        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <Icon name={SITE.logo} width={40} height={40}/>
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                {SITE.logoText}
-            </span>
-        </a>
-        
-        <!-- Botón de menú móvil -->
-        <div class="flex md:order-1 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <button id="btn-menu" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="navbar-sticky" aria-expanded="false">
-                <span class="sr-only">Abrir menú principal</span>
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                </svg>
-            </button>
-        </div>
-        
-        <!-- Contenedor del menú principal -->
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-2" id="navbar-sticky">
-            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
-                <!-- Elemento Inicio -->
-                <li>
-                    <a href="/"
-                       class:list={{
-                           ["block py-2 px-3 rounded md:p-0"]: true,
-                           ["active"]: pathname === "/",
-                       }}>Inicio</a>
-                </li>
-                
-                <!-- Elemento Experiencia con Dropdown -->
-                <li class="dropdown-container">
-                    <button type="button" class="dropdown-toggle flex items-center py-2 px-3 w-full md:w-auto md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                        Experiencia
-                        <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu hidden z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
-                            <li>
-                                <a href="/experiencia/profesional" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profesional</a>
-                            </li>
-                            <li>
-                                <a href="/experiencia/academica" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Académica</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                
-                <!-- Elemento Certificaciones con Dropdown -->
-                <li class="dropdown-container">
-                    <button type="button" class="dropdown-toggle flex items-center py-2 px-3 w-full md:w-auto md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                        Certificaciones
-                        <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown-menu hidden z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
-                            <li>
-                                <a href="/certificaciones/tecnicas" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Técnicas</a>
-                            </li>
-                            <li>
-                                <a href="/certificaciones/profesionales" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profesionales</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                
-                <!-- Elemento Proyectos -->
-                <li>
-                    <a href="/Proyectos"
-                       class:list={{
-                           ["block py-2 px-3 rounded md:p-0"]: true,
-                           ["active"]: pathname === "/Proyectos",
-                       }}>Proyectos</a>
-                </li>
-            </ul>
-        </div>
+<nav {...attrs} class={`flex items-center justify-between p-4 ${attrs.class || ''}`}>
+  <!-- Logo -->
+  {logo && (
+    <a href="/" class="flex items-center">
+      <img src={logo} alt="Logo" class="h-10" />
+    </a>
+  )}
+
+  <!-- Menú Desktop -->
+  <div class="hidden md:flex gap-6">
+    <a href="/" class="hover:text-primary">Inicio</a>
+    <a href="/about" class="hover:text-primary">Sobre mí</a>
+    <div class="relative dropdown-container">
+      <button 
+        class="hover:text-primary flex items-center"
+        on:click={(e) => handleDropdown(e)}
+      >
+        Proyectos <span class="ml-1">▼</span>
+      </button>
+      <div class="absolute hidden bg-white shadow-lg rounded mt-2 p-2">
+        <a href="/projects/web" class="block px-4 py-2 hover:bg-gray-100">Web</a>
+        <a href="/projects/mobile" class="block px-4 py-2 hover:bg-gray-100">Mobile</a>
+      </div>
     </div>
+  </div>
+
+  <!-- Menú Mobile -->
+  <button id="mobile-menu-button" class="md:hidden">
+    ☰
+  </button>
+
+  <script>
+    // Función corregida con tipos TypeScript
+    const handleDropdown = (event: MouseEvent) => {
+      const target = event.currentTarget as HTMLElement;
+      const dropdownMenu = target.nextElementSibling as HTMLElement | null;
+      
+      if (dropdownMenu) {
+        dropdownMenu.classList.toggle('hidden');
+      }
+    };
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.dropdown-container')) {
+        document.querySelectorAll('.dropdown-container + div').forEach((menu) => {
+          menu.classList.add('hidden');
+        });
+      }
+    });
+
+    // Menú móvil
+    const mobileButton = document.getElementById('mobile-menu-button');
+    mobileButton?.addEventListener('click', () => {
+      const menu = document.querySelector('.md\\:hidden');
+      menu?.classList.toggle('hidden');
+    });
+  </script>
 </nav>
-
-<style>
-    .active {
-        @apply
-        text-light-theme
-        bg-n500
-
-        md:text-primary-light
-        md:bg-transparent
-
-        dark:text-primary-dark
-        dark:bg-dark-theme
-
-        md:dark:text-primary-dark
-        md:dark:bg-transparent
-    }
-    
-    /* Posición del dropdown en escritorio */
-    @media (min-width: 768px) {
-        .dropdown-container {
-            position: relative;
-        }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            margin-top: 0.5rem;
-        }
-    }
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Toggle para el menú principal en móvil
-        const btnMenu = document.getElementById('btn-menu');
-        const navbarSticky = document.getElementById('navbar-sticky');
-        
-        if (btnMenu && navbarSticky) {
-            btnMenu.addEventListener('click', function() {
-                navbarSticky.classList.toggle('hidden');
-            });
-        }
-        
-        // Toggle para los dropdowns
-        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-        
-        dropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.stopPropagation(); // Evitar propagación del evento
-                
-                // Obtener el menú dropdown relacionado
-                const dropdownMenu = this.nextElementSibling;
-                
-                // Cerrar todos los otros dropdowns
-                document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                    if (menu !== dropdownMenu && !menu.classList.contains('hidden')) {
-                        menu.classList.add('hidden');
-                    }
-                });
-                
-                // Toggle del dropdown actual
-                dropdownMenu.classList.toggle('hidden');
-            });
-        });
-        
-        // Cerrar dropdowns al hacer clic fuera
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown-container')) {
-                document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                    menu.classList.add('hidden');
-                });
-            }
-        });
-    });
-    
-    // Ejecutar después de transiciones de vista en Astro
-    document.addEventListener("astro:after-swap", function() {
-        // Toggle para el menú principal en móvil
-        const btnMenu = document.getElementById('btn-menu');
-        const navbarSticky = document.getElementById('navbar-sticky');
-        
-        if (btnMenu && navbarSticky) {
-            btnMenu.addEventListener('click', function() {
-                navbarSticky.classList.toggle('hidden');
-            });
-        }
-        
-        // Toggle para los dropdowns
-        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-        
-        dropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.stopPropagation(); // Evitar propagación del evento
-                
-                // Obtener el menú dropdown relacionado
-                const dropdownMenu = this.nextElementSibling;
-                
-                // Cerrar todos los otros dropdowns
-                document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                    if (menu !== dropdownMenu && !menu.classList.contains('hidden')) {
-                        menu.classList.add('hidden');
-                    }
-                });
-                
-                // Toggle del dropdown actual
-                dropdownMenu.classList.toggle('hidden');
-            });
-        });
-    });
-</script>
