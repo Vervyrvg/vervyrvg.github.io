@@ -4,11 +4,11 @@ export const menu = [
         label: 'Home',
     },
     {
-        href: '/projects',
-        label: 'Projects',
+        href: '/Proyecto',
+        label: 'Proyecto',
     },
     {
-        href: '/blog',
-        label: 'Blog',
+        href: '/Certificaciones',
+        label: 'Certificaciones',
     },
 ]
