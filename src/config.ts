@@ -33,7 +33,7 @@ export const ME = {
     ],
     contactInfo: {
         email: "vicbox.dev@vicbox.dev",
-        linkedin: "https://www.linkedin.com/in/victor-alvaradohn",
+        linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas",
         resumeDoc: "resume.pdf",
     },
     aboutMe: "I am a software engineer with a passion for web development. I have experience in building web " + "applications using modern technologies. I am a self-taught developer who enjoys learning new things and " + "sharing knowledge with others.",
