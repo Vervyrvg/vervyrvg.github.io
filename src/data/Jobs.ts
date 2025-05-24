@@ -44,12 +44,12 @@ interface WorkExperience {
  */
 const workExperience:WorkExperience[] = [
     {
-        title: " Especialista en ciberseguridad: administración e implementación de soluciones de seguridad - Sentinel",
+        title: "Especialista Gestión, Administración e Implementación de Soluciones de ciberguridad  -  Sentínel",
         startDate: "2024-07-10",
         endDate:   "2024-12-10",
         company: "IQsec S.A DE C.V",
         location: "Mexico",
-        description: "Migración de infraestructura de seguridad en sector gubernamental",
+        description: "Integración de ecosistema Fortinet desplegando soluciones especializadas en Forcepoint, Forescout y BeyondTrust PAM.",
         goals: [
             "De manera unificada y segmentando tanto por departamento y servicios unicados integro un ecosistema basado en la tecnología de Fortinet como nucleo en una red multicapa con unodades clave FortiGate, FortiAnalyzer (FAZ), FortiManager, FortiExtender, FortiSwitch, FortiAP, FortiClient, FortiWeb, FortiMail y FortiSandbox. Configuré políticas avanzadas de seguridad, VPNs, inspección profunda de paquetes (DPI), segmentación de red, control de acceso y autenticación multifactor. Personalicé la arquitectura para optimizar la protección, gestión centralizada, monitoreo en tiempo real y análisis avanzado de amenazas, asegurando alta disponibilidad y rendimiento en toda la infraestructura de red.",
             "Configure accesos privilegiados sin omitir la reguridad em base a la rotación diaria de credenciales, lo que redujo significativamente el riesgo de filtraciones y accesos no autorizados.  .",
