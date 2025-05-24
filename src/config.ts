@@ -1,5 +1,5 @@
 export const SITE = {
-    website: "https://simple-portfolio.vicbox.dev", // replace this with your deployed domain
+    website: "https://vervyrvg.github.io/", // replace this with your deployed domain
     title: "Portafolio",
     description: "Portafolio creado por IO. Ing. Victor Eduardo Resendiz Villegas",
     tags: ["Portafolio", "cv", "Astro"],
@@ -8,9 +8,9 @@ export const SITE = {
     logoText: "Portafolio",
     lang: "en",
     favicon: "/favicon.png",
-    repository: "https://github.com/vito8916/simple-portfolio.git",
+    repository: "https://github.com/vito8916/simple-portfolio",
     author: "Ing. Victor Eduardo Resendiz Villegas",
-    profile: "https://victoralvarado.dev/",
+    profile: "https://vervyrvg.github.io/",
 }
 
 export const ME = {
