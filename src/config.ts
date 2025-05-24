@@ -8,7 +8,7 @@ export const SITE = {
     logoText: "Portafolio",
     lang: "en",
     favicon: "/favicon.png",
-    repository: "https://github.com/vito8916/simple-portfolio",
+    repository: "https://github.com/Vervyrvg/Vervyrvg.github.io",
     author: "Ing. Victor Eduardo Resendiz Villegas",
     profile: "https://vervyrvg.github.io/",
 }
@@ -72,7 +72,7 @@ export const SOCIALS = [
     },
     {
         name: "GitHub",
-        url: "https://github.com/vito8916/simple-portfolio",
+        url: "https://github.com/Vervyrvg/Vervyrvg.github.io",
         icon: "github-fill",
         show: true
     }
