@@ -72,7 +72,7 @@ export const SOCIALS = [
     },
     {
         name: "GitHub",
-        url: "https://github.com/vicbox.dev",
+        url: "https://github.com/vito8916/simple-portfolio",
         icon: "github-fill",
         show: true
     }
