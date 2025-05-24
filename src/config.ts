@@ -23,7 +23,7 @@ export const ME = {
             description: "Años de Experiencia"
         },
         {
-            value: 28,
+            value: 34,
             description: "Proyectos culminados"
         },
         {
@@ -36,7 +36,7 @@ export const ME = {
         linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290",
         resumeDoc: "resume.pdf",
     },
-    aboutMe: "I am a software engineer with a passion for web development. I have experience in building web " + "applications using modern technologies. I am a self-taught developer who enjoys learning new things and " + "sharing knowledge with others.",
+    Perfil Profesional: "Soy profesional titulado en tecnologías de información y comunicación contando con +8 Años de experiencia en el sector de perimetral, mi compro es automatizar y  optimizar  Durante mi trayectoria en posiciones de liderazgo técnico, he desarrollado una visión transformadora que posiciona la seguridad como un habilitador estratégico de innovación empresarial, donde cada componente de protección genera valor tangible y acelera el crecimiento organizacional sostenible, Contando con un enfoque orientado a resultados y una pasión por la tecnología, estoy listo para enfrentar los desafíos del futuro digital y llevar la seguridad de tu organización al siguiente nivel Mi arquitectura de soluciones combina análisis predictivo avanzado con frameworks de respuesta.",
 }
 
 export const SOCIALS = [
