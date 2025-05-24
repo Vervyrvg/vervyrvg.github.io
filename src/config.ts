@@ -23,11 +23,11 @@ export const ME = {
             description: "Años de Experiencia"
         },
         {
-            value: 5,
+            value: 28,
             description: "Proyectos culminados"
         },
         {
-            value: 4,
+            value: 43,
             description: "Clientes"
         }
     ],
