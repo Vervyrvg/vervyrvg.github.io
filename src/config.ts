@@ -32,7 +32,7 @@ export const ME = {
         }
     ],
     contactInfo: {
-        email: "vicbox.dev@vicbox.dev",
+        email: "victorresendizv@outlook.com",
         linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290",
         resumeDoc: "resume.pdf",
     },
