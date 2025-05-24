@@ -1,18 +1,6 @@
 interface Education {
     title: string;
     startDate: string;
-    endDate?: string;
-    school: string;
-    location: string;
-    description: string;
-    currentUni: boolean;
-}
-
-const  education: Education[] = [
-    {
-        interface Education {
-    title: string;
-    startDate: string;
     endDate: string | null; // Puede ser null si aún estás estudiando
     school: string;
     location: string;
@@ -32,3 +20,4 @@ const education: Education[] = [
     },
 ];
 
+export default education;
