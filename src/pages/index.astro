@@ -8,13 +8,13 @@ import AboutMeCC from "../components/AboutMeCC.astro";
 import ProfileFacts from "../components/ProfileFacts.astro";
 ---
 
-<Layout title="Ing. Victor Eduardo Resendiz Villegas | Portafolio" description="A simple portfolio created with Astro." scrollSmooth={false}>
+<Layout title="VicBox Dot Dev | " description="A simple portfolio created with Astro." scrollSmooth={false}>
     <>
         <ProfileInfo/>
         <ProfileFacts/>
         <ProfileActionButton/>
         <TabsButtons client:idle>
-            <ProjectsCC slot="proyets"/>
+            <ProjectsCC slot="portfolio"/>
             <AboutMeCC slot="about"/>
         </TabsButtons>
     </>
