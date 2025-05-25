@@ -8,7 +8,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://ing.victoreduardoresendizvillegascv.github.io',
+    site: 'https://vervyrvg.github.io',
     base: '/',
     integrations: [mdx(), react(), tailwind({
         applyBaseStyles: false,
