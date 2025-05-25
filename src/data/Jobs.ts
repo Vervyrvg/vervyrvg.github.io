@@ -62,7 +62,7 @@ const workExperience:WorkExperience[] = [
         startDate: "2024-07-10",
         endDate:   "2024-12-10",
         company: "IQsec",
-        location: "Híbrido",
+        location: "Ciudad de Mexico",
         description: "Integración de ecosistema Fortinet desplegando soluciones especializadas en Forcepoint, Forescout y BeyondTrust PAM.",
         goals: [
             "Colaboré directamente con cliente, logrando una mejora del 90% en la alineación de las soluciones a sus necesidades específicas de seguridad, incrementando su satisfacción y confianza.",
@@ -73,7 +73,7 @@ const workExperience:WorkExperience[] = [
     },
     {
         title: "Especialista en Gestión, Implementación de ciberguridad  -  Senior.",
-        startDate: "2023-09-12,
+        startDate: "2023-09-12",
         endDate: "2024-07-10",
         company: "Circulo Daat S.A de C.V.",
         location: "Mexico",
