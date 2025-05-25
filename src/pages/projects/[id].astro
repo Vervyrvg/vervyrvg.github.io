@@ -7,7 +7,7 @@ import BackBtn from "@/components/BackBtn.astro";
 import BackToTop from "../../components/BackToTop.astro";
 
 export async function getStaticPaths() {
-    const posts = await getCollection('project');
+    const posts = await getCollection('projects');
     return posts.map(post => ({
         params: { id: post.id },
         props: { post },
