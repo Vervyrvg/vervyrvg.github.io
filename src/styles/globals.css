@@ -1,135 +1,103 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
-  :root {
-    --radius: 0.5rem;
-    --cyber-green: #00ff88;
-    --cyber-blue: #00a3ff;
-    --cyber-red: #ff0040;
-    --matrix-glow: rgba(0, 255, 136, 0.15);
-    --security-shadow: 0 4px 30px rgba(0, 255, 136, 0.1);
-  }
-
-  body {
-    @apply bg-white text-zinc-800 overflow-x-hidden;
-    background-image: 
-      linear-gradient(to right, rgba(0, 255, 136, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    animation: grid-pulse 40s linear infinite;
-  }
-
-  @keyframes grid-pulse {
-    0% { background-position: 0 0; }
-    100% { background-position: 800px 800px; }
-  }
-
-  h1, h2, h3 {
-    @apply font-bold tracking-tighter;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  }
+    :root {
+        --radius: 0.5rem
+    }
+    
+    body {
+        @apply bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800;
+        background-attachment: fixed;
+        background-image: 
+            radial-gradient(circle at 25% 25%, rgba(74, 222, 218, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(138, 43, 226, 0.05) 0%, transparent 50%);
+    }
 }
 
-@layer components {
-  .cyber-card {
-    @apply bg-white/95 backdrop-blur-md border border-zinc-200 rounded-xl p-6 shadow-lg;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    &:hover {
-      @apply border-cyber-green shadow-cyber-shadow transform -translate-y-1;
-    }
-  }
-
-  .cyber-button {
-    @apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg transition-all;
-    background: linear-gradient(45deg, var(--cyber-blue), var(--cyber-green));
-    color: white !important;
-    
-    &:hover {
-      @apply shadow-cyber-shadow;
-      animation: button-glitch 0.4s linear;
-    }
-  }
-
-  .cyber-border {
-    @apply relative;
-    
-    &::after {
-      content: '';
-      @apply absolute inset-0 border-2 border-transparent rounded-xl pointer-events-none;
-      background: linear-gradient(45deg, var(--cyber-green), var(--cyber-blue)) border-box;
-      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      animation: border-glow 3s ease-in-out infinite;
-    }
-  }
-
-  .stats-grid {
-    @apply grid grid-cols-3 gap-4 mb-8;
-    
-    .stat-item {
-      @apply cyber-card text-center p-4;
-      
-      .stat-value {
-        @apply text-3xl font-bold mb-2;
-        background: linear-gradient(45deg, var(--cyber-blue), var(--cyber-green));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    }
-  }
+main {
+    @apply flex-grow;
 }
 
-@layer utilities {
-  .text-cyber-green { color: var(--cyber-green); }
-  .border-cyber-green { border-color: var(--cyber-green); }
-  .shadow-cyber-shadow { box-shadow: var(--security-shadow); }
-
-  @keyframes border-glow {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
-  }
-
-  @keyframes button-glitch {
-    0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-    25% { clip-path: polygon(0 5%, 100% 15%, 100% 95%, 0 85%); }
-    50% { clip-path: polygon(0 10%, 100% 5%, 100% 85%, 0 95%); }
-    75% { clip-path: polygon(0 15%, 100% 10%, 100% 90%, 0 80%); }
-    100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  }
-}
-
+/* Base prose styling */
+/* Customize .prose directly */
 .prose {
-  @apply max-w-none text-zinc-700;
-  
-  a {
-    @apply text-cyber-blue font-medium hover:text-cyber-green transition-colors;
-    
-    &::after {
-      content: '';
-      @apply block h-0.5 bg-cyber-green w-0 transition-all duration-300;
-    }
-    
-    &:hover::after {
-      @apply w-full;
-    }
-  }
-
-  code {
-    @apply bg-zinc-100 text-cyber-green px-2 py-1 rounded border border-cyber-green/30;
-  }
+    color: theme('colors.n700');
+    --tw-prose-headings: theme('colors.n700');
+    --tw-prose-p: theme('colors.n700');
+    --tw-prose-a: theme('colors.primary-light');
+    --tw-prose-a-hover: theme('colors.primary-hover-light');
+    --tw-prose-blockquote: theme('colors.n500');
+    --tw-prose-figcaption: theme('colors.n500');
+    --tw-prose-strong: theme('colors.n700');
+    --tw-prose-code: theme('colors.n700');
+    --tw-prose-ol: theme('colors.n700');
+    --tw-prose-ul: theme('colors.n700');
+    --tw-prose-li-marker: theme('colors.n500');
+    --tw-prose-img: theme('colors.n700');
+    --tw-prose-hr: theme('colors.n500');
 }
 
-::-webkit-scrollbar {
-  @apply w-2;
-  
-  &-track {
-    @apply bg-zinc-100;
-  }
-  
-  &-thumb {
-    @apply bg-cyber-green/50 rounded-full hover:bg-cyber-green/70;
-  }
+/* Dark mode customization */
+@media (prefers-color-scheme: dark) {
+    .prose {
+        color: theme('colors.n200');
+        --tw-prose-headings: theme('colors.light-theme');
+        --tw-prose-p: theme('colors.light-theme');
+        --tw-prose-a: theme('colors.primary-dark');
+        --tw-prose-a-hover: theme('colors.primary-hover-dark');
+        --tw-prose-blockquote: theme('colors.n500');
+        --tw-prose-figcaption: theme('colors.light-theme');
+        --tw-prose-strong: theme('colors.light-theme');
+        --tw-prose-code: theme('colors.light-theme');
+        --tw-prose-ol: theme('colors.light-theme');
+        --tw-prose-ul: theme('colors.light-theme');
+        --tw-prose-li-marker: theme('colors.n500');
+        --tw-prose-img: theme('colors.light-theme');
+        --tw-prose-hr: theme('colors.n500');
+    }
+}
+
+.prose img {
+    @apply rounded-2xl;
+}
+
+/* Icon Animations */
+.cv-btn:hover .animate-slide-right {
+    animation: slide-right 0.5s cubic-bezier(1, -.43, .68, .57) infinite alternate both !important;
+}
+
+.li-btn:hover .linkedin-anim {
+    animation: linkedin 2s infinite both cubic-bezier(1, -.08, 0, 1.12);
+}
+
+/* Code Block Styles */
+pre {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 1.25rem 0;
+    background: transparent;
+    overflow-x: auto;
+}
+
+code {
+    display: block;
+    padding: 0 1.5rem;
+    width: fit-content;
+    min-width: 100%;
+    line-height: 1.7;
+    font-size: 0.875rem;
+    transition: color 0.5s;
+}
+
+@keyframes slide-right {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(5px); }
+}
+
+@keyframes linkedin {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
