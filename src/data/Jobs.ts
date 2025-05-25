@@ -44,7 +44,7 @@ interface WorkExperience {
  */
 const workExperience:WorkExperience[] = [
     {
-        title: "specialista Gestión, Administración e Implementación de Soluciones de ciberguridad  -  Sentínel",
+        title: "Especialista Gestión, Administración e Implementación de Soluciones de ciberguridad  -  Sentínel",
         startDate: "2024-07-10",
         endDate:   "2024-12-10",
         company: "IQsec S.A DE C.V",
@@ -58,16 +58,10 @@ const workExperience:WorkExperience[] = [
         currentJob: true,
     },
     {
-        title: "Software Engineer",
-        startDate: "2018-03-10",
-        endDate: "2020-03-10",
-        company: "Company Name",
-        location: "United States",
-        description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
-        goals: [
-            "Developed and maintained web applications using React, NodeJs, and MongoDB.",
-            "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
-            "Created and maintained web applications using React, NodeJs, and MongoDB.",
+        title: "Logros",
+         [
+            "Colaboré directamente con cliente, logrando una mejora del 90% en la alineación de las soluciones a sus necesidades específicas de seguridad, incrementando su satisfacción y confianza.",
+            "Se consolidó el 100% el ecosistema con un mayor control de privilegios y segmentación de la red como en defensa gradual en sus diferentes áreas de manera interna.",
         ],
         currentJob: false,
     },
