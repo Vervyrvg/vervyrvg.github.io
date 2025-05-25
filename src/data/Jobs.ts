@@ -44,7 +44,7 @@ interface WorkExperience {
  */
 const workExperience:WorkExperience[] = [
     {
-        title: "Especialista Gestión, Administración e Implementación de Soluciones de ciberguridad  -  Sentínel",
+        title: "specialista Gestión, Administración e Implementación de Soluciones de ciberguridad  -  Sentínel",
         startDate: "2024-07-10",
         endDate:   "2024-12-10",
         company: "IQsec S.A DE C.V",
