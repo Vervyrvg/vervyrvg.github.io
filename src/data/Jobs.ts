@@ -55,7 +55,23 @@ const workExperience:WorkExperience[] = [
             "Configure accesos privilegiados sin omitir la reguridad em base a la rotación diaria de credenciales, lo que redujo significativamente el riesgo de filtraciones y accesos no autorizados.  .",
             "Desplegue CounterACT para monitorear tráfico en tiempo real, aplicando restricciones de ancho de banda y bloqueos de protocolos no esenciales en respuesta a indicadores de compromiso. Configuré Host Monitor para detectar amenazas en tráfico saliente y entrante, asegurando el bloqueo inmediato de dispositivos no autorizados a través de políticas NAC, escalamiento automático de incidentes al equipo de respuesta, optimizando la protección de la red y garantizando una operación segura y eficiente.",
         ],
-        currentJob: true,
+        currentJob: false,
+    },
+    {
+        title: "Software Engineer",
+        startDate: "2018-03-10",
+        endDate: "2020-03-10",
+        company: "Company Name",
+        location: "United States",
+        description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
+        goals: [
+            "Developed and maintained web applications using React, NodeJs, and MongoDB.",
+            "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
+            "Created and maintained web applications using React, NodeJs, and MongoDB.",
+
+
+],
+        currentJob: false,
     },
     {
         title: "Software Engineer",
