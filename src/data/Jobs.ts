@@ -58,33 +58,15 @@ const workExperience:WorkExperience[] = [
         currentJob: false,
     },
     {
-        title: "Software Engineer",
-        startDate: "2018-03-10",
-        endDate: "2020-03-10",
-        company: "Company Name",
-        location: "United States",
-        description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
+        title: "Logros",
+        startDate: "2024-07-10",
+        endDate:   "2024-12-10",
+        company: "IQsec S.A DE C.V",
+        location: "Ciudad de México, Jornada completa - Híbrida",
+        description: "Hola.",
         goals: [
-            "Developed and maintained web applications using React, NodeJs, and MongoDB.",
+            "Colaboré directamente con cliente, logrando una mejora del 90% en la alineación de las soluciones a sus necesidades específicas de seguridad, incrementando su satisfacción y confianza.",
             "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
-            "Created and maintained web applications using React, NodeJs, and MongoDB.",
-
-
-],
-        currentJob: false,
-    },
-    {
-        title: "Software Engineer",
-        startDate: "2018-03-10",
-        endDate: "2020-03-10",
-        company: "Company Name",
-        location: "United States",
-        description: "Developed and maintained web applications using React, NodeJs, and MongoDB.",
-        goals: [
-            "Developed and maintained web applications using React, NodeJs, and MongoDB.",
-            "Worked with the team to develop and maintain web applications using React, NodeJs, and MongoDB.",
-            "Created and maintained web applications using React, NodeJs, and MongoDB.",
-
 
 ],
         currentJob: false,
