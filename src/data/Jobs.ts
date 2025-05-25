@@ -55,20 +55,8 @@ const workExperience:WorkExperience[] = [
             "Configure accesos privilegiados sin omitir la reguridad em base a la rotación diaria de credenciales, lo que redujo significativamente el riesgo de filtraciones y accesos no autorizados.  .",
             "Desplegue CounterACT para monitorear tráfico en tiempo real, aplicando restricciones de ancho de banda y bloqueos de protocolos no esenciales en respuesta a indicadores de compromiso. Configuré Host Monitor para detectar amenazas en tráfico saliente y entrante, asegurando el bloqueo inmediato de dispositivos no autorizados a través de políticas NAC, escalamiento automático de incidentes al equipo de respuesta, optimizando la protección de la red y garantizando una operación segura y eficiente.",
         ],
-        currentJob: false,
-    },
-    {
-        title: "Logros",
-        startDate: "2024-07-10",
-        endDate:   "2024-12-10",
-        company: "IQsec S.A DE C.V",
-        location: "Ciudad de Mexico, Jornada completa - Híbrida",
-        description: "Logros",
-        goals: [
-            "Colaboré directamente con cliente, logrando una mejora del 90% en la alineación de las soluciones a sus necesidades específicas de seguridad, incrementando su satisfacción y confianza.",
-            "Se consolidó el 100% el ecosistema con un mayor control de privilegios y segmentación de la red como en defensa gradual en sus diferentes áreas de manera interna.",
-        ],
         currentJob: true,
+    },
     {
         title: "Software Engineer",
         startDate: "2018-03-10",
