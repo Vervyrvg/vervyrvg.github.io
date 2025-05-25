@@ -59,8 +59,11 @@ const workExperience:WorkExperience[] = [
     },
     {
         title: "Logros",
+        startDate: "2024-07-10",
+        endDate:   "2024-12-10",
         company: "IQsec S.A DE C.V",
         location: "Ciudad de México, Jornada completa - Híbrida",
+        description: "Integración de ecosistema Fortinet desplegando soluciones especializadas en Forcepoint, Forescout y BeyondTrust PAM.",
         goals: [
             "Colaboré directamente con cliente, logrando una mejora del 90% en la alineación de las soluciones a sus necesidades específicas de seguridad, incrementando su satisfacción y confianza.",
             "Se consolidó el 100% el ecosistema con un mayor control de privilegios y segmentación de la red como en defensa gradual en sus diferentes áreas de manera interna..",
