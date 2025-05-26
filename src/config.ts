@@ -29,7 +29,8 @@ export const ME = {
             value: 45,
             description: "Clientes Atendidos"
         },
-        {   value: 18,
+        {
+            value: 18,
             description: "Talleres Impartidos"
         },
         {
@@ -37,7 +38,8 @@ export const ME = {
             description: "Herramientas o Script's Desarrollados"
         },
     ],
-    contactInfo: {
+    contactInfo: 
+    {
         email: "victorresendizv@outlook.com",
         linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290",
         resumeDoc: "resume.pdf",
