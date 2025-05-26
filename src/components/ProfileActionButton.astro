@@ -13,29 +13,49 @@ const { linkedin, email } = ME.contactInfo;
 ---
 
 <div class="profile-action-buttons w-full flex gap-2">
-    <!--  CV -->
+    <!-- Botón CV -->
     <Button
         data-cv={resume}
         id="cvBtn"
         size={'lg'}
-        className="[&_svg]:size-7 px-4 md:px-5 h-14 cv-btn flex-1 text-n700 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark">
-        Currículum Vitae
+        className="[&_svg]:size-8 px-4 md:px-8 h-14 cv-btn flex-1 text-n500 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark">
+        Currículum Vitse
         <DownloadArrow width={24} height={24} />
     </Button>
 
-    <!--  Carta de Presentación -->
+    <!-- Botón Carta de Presentación -->
     <Button
         data-carta={carta}
         id="cartaBtn"
         size={'lg'}
-        className="[&_svg]:size-7 px-4 md:px-5 h-14 carta-btn flex-1 text-n700 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark">
+        className="[&_svg]:size-8 px-4 md:px-8 h-14 carta-btn flex-1 text-n500 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark">
         Carta presentación
-        <DownloadArrow width={24} height={24} />
+        <DownloadArrow width={20} height={20} />
+    </Button>
+
+    <!-- Botón LinkedIn -->
+    <Button 
+        size="icon" 
+        className="[&_svg]:size-8 h-14 w-14 li-btn flex-none text-n700 dark:text-n200 bg-white dark:bg-black hover:bg-grey-500 dark:hover:bg-n700 transition-all">
+        <a href={linkedin} aria-label="Mi perfil de LinkedIn" target="_blank" rel="noopener noreferrer">
+            <LinkedIn width={24} height={24} />
+        </a>
+    </Button>
+
+    <!-- Botón Email -->
+    <Button 
+        size="icon" 
+        className="[&_svg]:size-6 h-14 w-14 email-btn flex-none text-n700 dark:text-n200 bg-white dark:bg-black hover:bg-grey-500 dark:hover:bg-n700 transition-all">
+        <a href={`mailto:${email}`} aria-label="Enviarme un email">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="fill-n700 dark:fill-n200">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+        </a>
     </Button>
 </div>
 
 <script>
-    // Currículum vitae
+    // Manejo del botón CV
     const cvBtn = document.getElementById('cvBtn') as HTMLButtonElement;
     const cartaBtn = document.getElementById('cartaBtn') as HTMLButtonElement;
     
@@ -54,24 +74,6 @@ const { linkedin, email } = ME.contactInfo;
         cartaBtn.addEventListener('click', () => {
             if (carta) {
                 window.open(carta, '_blank');
-            }
-        });
-    }
-!-- Botón LinkedIn -->
-    <Button 
-        size="icon" 
-        className="[&_svg]:size-8 h-14 w-14 li-btn flex-none text-n700 dark:text-n200 bg-white dark:bg-black hover:bg-grey-500 dark:hover:bg-n700 transition-all">
-        <a href={linkedin} aria-label="Mi perfil de LinkedIn" target="_blank" rel="noopener noreferrer">
-            <LinkedIn width={24} height={24} />
-        </a>
-    </Button>
-    <!-- Botón Email -->
-    <Button 
-        size="icon" 
-        className="[&_svg]:size-6 h-14 w-14 email-btn flex-none text-n700 dark:text-n200 bg-white dark:bg-black hover:bg-grey-500 dark:hover:bg-n700 transition-all">
-        <a href={`mailto:${email}`} aria-label="Enviarme un email">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="fill-n700 dark:fill-n200">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>    
             }
         });
     }
