@@ -13,24 +13,24 @@ const { linkedin, email } = ME.contactInfo;
 ---
 
 <div class="profile-action-buttons w-full flex gap-2">
-    <!-- Botón CV -->
+    <!-- CV -->
     <Button
         data-cv={resume}
         id="cvBtn"
         size={'lg'}
         className="[&_svg]:size-8 px-4 md:px-8 h-14 cv-btn flex-1 text-n500 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark">
-        Currículum Vitse
-        <DownloadArrow width={24} height={24} />
+        Currículum Vitae
+        <DownloadArrow width={15} height={15} />
     </Button>
 
-    <!-- Botón Carta de Presentación -->
+    <!--  Carta de Presentación -->
     <Button
         data-carta={carta}
         id="cartaBtn"
         size={'lg'}
-        className="[&_svg]:size-8 px-4 md:px-8 h-14 carta-btn flex-1 text-n500 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark">
-        Carta presentación
-        <DownloadArrow width={20} height={20} />
+        className="[&_svg]:size-8 px-2 md:px-8 h-14 carta-btn flex-1 text-n500 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark">
+        Carta de Presentación
+        <DownloadArrow width={15} height={20} />
     </Button>
 
     <!-- Botón LinkedIn -->
