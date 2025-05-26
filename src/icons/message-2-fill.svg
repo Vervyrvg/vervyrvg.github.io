@@ -1,10 +1,4 @@
-<!-- Botón Email -->
-    <Button 
-        size="icon" 
-        className="h-14 w-14 flex-none bg-black dark:bg-n800 hover:bg-n700 dark:hover:bg-n600 border border-n600 dark:border-n500 transition-all duration-200">
-        <a href={`mailto:${email}`} aria-label="Enviarme un email" class="flex items-center justify-center w-full h-full">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="fill-white">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
             </svg>
-        </a>
-    </Button>
+        
