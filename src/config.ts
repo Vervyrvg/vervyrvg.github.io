@@ -30,9 +30,12 @@ export const ME = {
             value: 45,
             description: "Clientes Atendidos"
         },
-        {
-            value: 18,
+        {   value: 18,
             description: "Talleres Impartidos"
+        },
+        {
+            value: 4,
+            description: "Herramientas o Script's Desarrollados"
         },
     ],
     contactInfo: {
@@ -64,7 +67,7 @@ export const SOCIALS = [
     },
     {
         name: "Youtube",
-        url: "https://www.youtube.com/vicbox.dev",
+        url: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290",
         icon: "youtube-fill",
         show: true
     },
@@ -72,7 +75,7 @@ export const SOCIALS = [
         name: "TikTok",
         url: "https://tiktok.com/vicbox.dev",
         icon: "tik-fill",
-        show: false
+        show: true
     },
     {
         name: "GitHub",
