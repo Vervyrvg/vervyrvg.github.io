@@ -49,9 +49,9 @@ export const SOCIALS = [
     },
     {
         name: "Facebook",
-        url: "victorresendizv@outlook.com",
+        url: "",
         icon: "facebook-fill",
-        show: true
+        show: false
     },
     {
         name: "Instagram",
