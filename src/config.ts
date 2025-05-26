@@ -12,7 +12,6 @@ export const SITE = {
     author: "Ing. Victor Eduardo Resendiz Villegas",
     profile: "https://vervyrvg.github.io/blog",
 }
-
 export const ME = {
     name: "Victor Eduardo Resendiz Villegas",
     profession: "Especialista, Gestión Administración e Implementación de Soluciones en Ciberseguridad - SOC Senior,",
@@ -43,9 +42,8 @@ export const ME = {
         linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290",
         resumeDoc: "resume.pdf",
     },
-    aboutMe: " Soy un ingeniero titulado en Tecnologías de la Información y Comunicación, con +8 años de experiencia especializada en Administratada e implementación de soluciones en Ciberseguridad Mi enfoque profesional se basa en automatizar y optimizar procesos para ofrecer soluciones innovadoras que fortalezcan la protección de sistemas críticos, durante mi carrera, he liderado proyectos que integran seguridad como un habilitador estratégico de innovación, transformando cada componente de protección en un valor agregado que impulsa el crecimiento sostenible y con una mentalidad orientada a resultados y una pasión por la tecnología, estoy preparado para enfrentar los desafíos del entorno actual. Mis soluciones combinan análisis predictivo avanzado con marcos de respuesta proactivos, garantizando un nivel de seguridad adaptable y eficiente que potencia la competitividad.",
+    aboutMe: " Soy un ingeniero titulado en Tecnologías de la Información y Comunicación, con +8 años de experiencia especializada en Administratada e implementación de soluciones en Ciberseguridad, mi enfoque profesional se basa en automatizar y optimizar procesos para ofrecer soluciones innovadoras que fortalezcan la protección de sistemas críticos, durante mi trayectoria he liderado proyectos que integran seguridad con un eje estratégico y transformando el crecimiento sostenible, con una mentalidad orientada a resultados y una pasión por la tecnología, estoy preparado para enfrentar los desafíos del entorno actual. Mis soluciones combinan análisis avanzado con marcos de respuesta proactivos, garantizando un nivel de seguridad adaptable y eficiente que potencia la competitividad.",
 }
-
 export const SOCIALS = [
     {
         name: "Twitter",
