@@ -12,9 +12,9 @@ export const SITE =
     repository: "https://github.com/Vervyrvg/vervyrvg.github.io",
     author: "Ing. Victor Eduardo Resendiz Villegas",
     profile: "https://vervyrvg.github.io/",
-}
-
-export const ME = {
+},
+export const ME = 
+{
     name: "Victor Eduardo Resendiz Villegas",
     profession: "Especialista, Gestión Administración e Implementación de Soluciones en Ciberseguridad - SOC Senior",
     profileImage: "pp2.png",
@@ -39,6 +39,7 @@ export const ME = {
             value: 4,
             description: "Herramientas Desarrolladas"
         },
+        {
     ],
     contactInfo: 
     {
