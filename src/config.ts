@@ -1,3 +1,4 @@
+// config.ts - Archivo de configuración corregido
 export const SITE = {
     website: "https://vervyrvg.github.io/", // replace this with your deployed domain
     title: "Portafolio",
@@ -6,15 +7,16 @@ export const SITE = {
     ogImage: "/og-image.webp",
     logo: "logo",
     logoText: "Portafolio",
-    lang: "en",
+    lang: "es", // Cambiado a español
     favicon: "/favicon.png",
-    repository: "https://github.com/Vervyrvg/vervyrvg.github.io/edit/master/src/config.ts",
+    repository: "https://github.com/Vervyrvg/vervyrvg.github.io",
     author: "Ing. Victor Eduardo Resendiz Villegas",
-    profile: "https://vervyrvg.github.io/blog",
+    profile: "https://vervyrvg.github.io/",
 }
+
 export const ME = {
     name: "Victor Eduardo Resendiz Villegas",
-    profession: "Especialista, Gestión Administración e Implementación de Soluciones en Ciberseguridad - SOC Senior,",
+    profession: "Especialista, Gestión Administración e Implementación de Soluciones en Ciberseguridad - SOC Senior",
     profileImage: "pp2.png",
     profileFacts: [
         {
@@ -23,7 +25,7 @@ export const ME = {
         },
         {
             value: 34,
-            description: "Proyectos Cloncluidos"
+            description: "Proyectos Concluidos" // Corregido: "Cloncluidos" -> "Concluidos"
         },
         {
             value: 45,
@@ -35,22 +37,43 @@ export const ME = {
         },
         {
             value: 4,
-            description: "Herramientas o Script's Desarrollados"
-        },
+            description: "Herramientas o Scripts Desarrollados" // Corregido: "Script's" -> "Scripts"
+        }
     ],
-    contactInfo: 
-    {
+    contactInfo: {
         email: "victorresendizv@outlook.com",
         linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290",
+        github: "https://github.com/Vervyrvg/vervyrvg.github.io",
+        whatsapp: "5632078947",
         resumeDoc: "resume.pdf",
+        cartaDoc: "carta.pdf",
     },
-    aboutMe: " Soy un ingeniero titulado en Tecnologías de la Información y Comunicación, con +8 años de experiencia especializada en Administratada e implementación de soluciones en Ciberseguridad, mi enfoque profesional se basa en automatizar y optimizar procesos para ofrecer soluciones innovadoras que fortalezcan la protección de sistemas críticos, durante mi trayectoria he liderado proyectos que integran seguridad con un eje estratégico y transformando el crecimiento sostenible, con una mentalidad orientada a resultados y una pasión por la tecnología, estoy preparado para enfrentar los desafíos del entorno actual. Mis soluciones combinan análisis avanzado con marcos de respuesta proactivos, garantizando un nivel de seguridad adaptable y eficiente que potencia la competitividad.",
+    aboutMe: "Soy un ingeniero titulado en Tecnologías de la Información y Comunicación, con +8 años de experiencia especializada en administración e implementación de soluciones en Ciberseguridad. Mi enfoque profesional se basa en automatizar y optimizar procesos para ofrecer soluciones innovadoras que fortalezcan la protección de sistemas críticos. Durante mi carrera, he liderado proyectos que integran seguridad como un habilitador estratégico de innovación, transformando cada componente de protección en un valor agregado que impulsa el crecimiento sostenible. Con una mentalidad orientada a resultados y una pasión por la tecnología, estoy preparado para enfrentar los desafíos del entorno actual. Mis soluciones combinan análisis predictivo avanzado con marcos de respuesta proactivos, garantizando un nivel de seguridad adaptable y eficiente que potencia la competitividad.",
 }
+
 export const SOCIALS = [
     {
-        name: "Twitter",
+        name: "WhatsApp",
         url: "https://wa.me/5632078947",
-        icon: "twitter-x-fill",
+        icon: "whatsapp-fill",
+        show: true
+    },
+    {
+        name: "Email",
+        url: "mailto:victorresendizv@outlook.com",
+        icon: "email-fill",
+        show: true
+    },
+    {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290",
+        icon: "linkedin-fill",
+        show: true
+    },
+    {
+        name: "GitHub",
+        url: "https://github.com/Vervyrvg/vervyrvg.github.io",
+        icon: "github-fill",
         show: true
     },
     {
@@ -63,24 +86,18 @@ export const SOCIALS = [
         name: "Instagram",
         url: "https://www.instagram.com/vicbox.dev",
         icon: "instagram-fill",
-        show: true
+        show: false
     },
     {
-        name: "Youtube",
-        url: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290",
+        name: "YouTube",
+        url: "https://www.youtube.com/vicbox.dev",
         icon: "youtube-fill",
-        show: true
+        show: false
     },
     {
         name: "TikTok",
         url: "https://tiktok.com/vicbox.dev",
-        icon: "tik-fill",
-        show: true
-    },
-    {
-        name: "GitHub",
-        url: "https://github.com/vicbox.dev",
-        icon: "github-fill",
-        show: true
+        icon: "tiktok-fill",
+        show: false
     }
 ]
