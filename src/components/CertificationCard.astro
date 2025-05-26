@@ -1,0 +1,161 @@
+---
+import Badge from './ui/badge.astro';
+import type { Certification } from '../data/certifications';
+
+interface Props {
+  certification: Certification;
+  featured?: boolean;
+}
+
+const { certification, featured = false } = Astro.props;
+
+const isExpiringSoon = (expiryDate: string) => {
+  const expiry = new Date(expiryDate);
+  const sixMonthsFromNow = new Date();
+  sixMonthsFromNow.setMonth(sixMonthsFromNow.getMonth() + 6);
+  return expiry <= sixMonthsFromNow && expiry > new Date();
+};
+
+const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString('es-ES', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+---
+
+<div 
+  class={`certification-card ${featured ? 'featured' : ''}`}
+  data-cert={JSON.stringify(certification)}
+  data-category={certification.category}
+  data-level={certification.level}
+>
+  <div class="card-header">
+    <div class="cert-logo" set:html={certification.logo}></div>
+    {certification.featured && (
+      <div class="featured-badge">
+        <Badge variant="secondary">★ Destacada</Badge>
+      </div>
+    )}
+    {isExpiringSoon(certification.expiryDate) && (
+      <div class="expiry-warning">
+        <Badge variant="warning">Expira pronto</Badge>
+      </div>
+    )}
+  </div>
+  
+  <div class="card-content">
+    <h3 class="cert-title">{certification.title}</h3>
+    <p class="cert-provider">{certification.provider}</p>
+    <p class="cert-description">{certification.description}</p>
+    
+    <div class="skills-container">
+      {certification.skills.slice(0, 3).map(skill => (
+        <Badge variant="outline" size="sm">{skill}</Badge>
+      ))}
+      {certification.skills.length > 3 && (
+        <Badge variant="secondary" size="sm">+{certification.skills.length - 3} más</Badge>
+      )}
+    </div>
+  </div>
+  
+  <div class="card-footer">
+    <div class="cert-meta">
+      <div class="cert-date">
+        <span class="date-label">Emitida:</span>
+        <span class="date-value">{formatDate(certification.issueDate)}</span>
+      </div>
+      <div class="cert-hours">
+        <span class="hours-value">{certification.hours}h</span>
+      </div>
+    </div>
+    
+    <div class="cert-level">
+      <Badge variant={certification.level === 'Professional' ? 'default' : 'secondary'}>
+        {certification.level}
+      </Badge>
+    </div>
+    
+    <div class="card-actions">
+      <button class="view-details-btn" data-cert-id={certification.id}>
+        Ver detalles
+      </button>
+      {certification.verificationUrl && (
+        <a 
+          href={certification.verificationUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="verify-btn"
+        >
+          Verificar
+        </a>
+      )}
+      {certification.cloudImageUrl && (
+        <a 
+          href={certification.cloudImageUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="cloud-image-btn"
+        >
+          Ver Imagen
+        </a>
+      )}
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Existing styles remain unchanged */
+  .certification-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ... (rest of the existing styles) ... */
+
+  .cloud-image-btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: #10b981;
+    color: white;
+    border: none;
+  }
+
+  .cloud-image-btn:hover {
+    background: #059669;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .certification-card {
+      padding: 1rem;
+    }
+    
+    .cert-logo {
+      font-size: 2.5rem;
+    }
+    
+    .cert-title {
+      font-size: 1.125rem;
+    }
+    
+    .card-actions {
+      flex-direction: column;
+    }
+  }
+</style>
