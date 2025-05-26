@@ -21,7 +21,7 @@ const hardSkills: HardSkill[] = [
     category: "Frontend Framework",
     experienceYears: 2,
     proficiencyLevel: "Advanced",
-    technologies: ["TypeScript", "Vite", "SSR", "SSG", "Web Components"},
+    technologies: ["TypeScript", "Vite", "SSR", "SSG", "Web Components"],
     projectsBuilt: 8,
     learningYear: 2022,
     officialDocs: "https://docs.astro.build/",
