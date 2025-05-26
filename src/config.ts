@@ -57,7 +57,7 @@ export const SOCIALS = [
         name: "Instagram",
         url: "victorresendizv@outlook.com",
         icon: "instagram-fill",
-        show: true
+        show: false
     },
     {
         name: "Youtube",
