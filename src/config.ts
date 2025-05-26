@@ -42,7 +42,7 @@ export const ME = {
 export const SOCIALS = [
     {
         name: "Twitter",
-        url: "https://twitter.com/vicbox.dev",
+        url: "Https://wa.me/5632078947",
         icon: "twitter-x-fill",
         show: true
     },
@@ -54,13 +54,13 @@ export const SOCIALS = [
     },
     {
         name: "Instagram",
-        url: "https://www.instagram.com/vicbox.dev",
+        url: "victorresendizv@outlook.com",
         icon: "instagram-fill",
         show: true
     },
     {
         name: "Youtube",
-        url: "https://www.youtube.com/vicbox.dev",
+        url: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290",
         icon: "youtube-fill",
         show: true
     },
