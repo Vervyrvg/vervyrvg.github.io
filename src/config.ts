@@ -2,7 +2,7 @@ export const SITE = {
     website: "https://vervyrvg.github.io/", // replace this with your deployed domain
     title: "Portafolio",
     description: "Especialista, Gestión Administración e Implementación de Soluciones en Ciberseguridad - SOC Senior",
-    tags: ["portfolio", "Resume cv", "Astro"],
+    tags: ["portfolio"],
     ogImage: "/og-image.webp",
     logo: "logo",
     logoText: "Portafolio",
@@ -14,7 +14,7 @@ export const SITE = {
 }
 
 export const ME = {
-    name: "VicBox Dot Dev",
+    name: "Victor Eduardo Resendiz Villegas",
     profession: "Especialista, Gestión Administración e Implementación de Soluciones en Ciberseguridad - SOC Senior,",
     profileImage: "pp2.png",
     profileFacts: [
@@ -29,7 +29,11 @@ export const ME = {
         {
             value: 45,
             description: "Clientes Atendidos"
-        }
+        },
+        {
+            value: 18,
+            description: "Talleres Impartidos"
+        },
     ],
     contactInfo: {
         email: "victorresendizv@outlook.com",
