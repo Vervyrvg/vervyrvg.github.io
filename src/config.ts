@@ -5,30 +5,30 @@ export const SITE = {
     tags: ["portfolio", "Resume cv", "Astro"],
     ogImage: "/og-image.webp",
     logo: "logo",
-    logoText: "Portfolio",
+    logoText: "Portafolio",
     lang: "en",
     favicon: "/favicon.png",
     repository: "https://github.com/Vervyrvg/vervyrvg.github.io/edit/master/src/config.ts",
     author: "Ing. Victor Eduardo Resendiz Villegas",
-    profile: "no https://vervyrvg.github.io/",
+    profile: "https://vervyrvg.github.io/blog",
 }
 
 export const ME = {
     name: "VicBox Dot Dev",
-    profession: "Software Engineer | Full Stack Developer",
+    profession: "Especialista, Gestión Administración e Implementación de Soluciones en Ciberseguridad - SOC Senior,",
     profileImage: "pp2.png",
     profileFacts: [
         {
-            value: 10,
-            description: "Years of Experience"
+            value: 8,
+            description: "Años de Experiencia"
         },
         {
-            value: 5,
-            description: "Completed Projects"
+            value: 34,
+            description: "Proyectos Cloncluidos"
         },
         {
-            value: 4,
-            description: "Satisfied Clients"
+            value: 45,
+            description: "Clientes Atendidos"
         }
     ],
     contactInfo: {
@@ -42,7 +42,7 @@ export const ME = {
 export const SOCIALS = [
     {
         name: "Twitter",
-        url: "https:",
+        url: "https://wa.me/5632078947",
         icon: "twitter-x-fill",
         show: true
     },
