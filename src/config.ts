@@ -28,13 +28,14 @@ export const ME = {
         },
         {
             value: 43,
-            description: "Clientes"
+            description: "Clientes "
         }
     ],
     contactInfo: {
         email: "victorresendizv@outlook.com",
         linkedin: "https://www.linkedin.com/in/victor-eduardo-resendiz-villegas-910a80290",
         resumeDoc: "resume.pdf",
+        cartaDoc: "carta.pdf",
     },
     aboutMe: "Soy profesional titulado en tecnologías de información y comunicación contando con +8 Años de experiencia en el sector de perimetral, mi compro es automatizar y  optimizar  Durante mi trayectoria en posiciones de liderazgo técnico, he desarrollado una visión transformadora que posiciona la seguridad como un habilitador estratégico de innovación empresarial, donde cada componente de protección genera valor tangible y acelera el crecimiento organizacional sostenible, Contando con un enfoque orientado a resultados y una pasión por la tecnología, estoy listo para enfrentar los desafíos del futuro digital y llevar la seguridad de tu organización al siguiente nivel Mi arquitectura de soluciones combina análisis predictivo avanzado con frameworks de respuesta.",
 }
