@@ -13,17 +13,17 @@ const { linkedin, email } = ME.contactInfo;
 ---
 
 <div class="profile-action-buttons w-full flex gap-2">
-    <!-- Botón CV -->
+    <!--  CV -->
     <Button
         data-cv={resume}
         id="cvBtn"
         size={'lg'}
         className="[&_svg]:size-8 px-4 md:px-8 h-14 cv-btn flex-1 text-n700 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark">
-        Currículum Vitae 
+        Download CV
         <DownloadArrow width={24} height={24} />
     </Button>
 
-    <!-- Carta de Presentación -->
+    <!--  Carta de Presentación -->
     <Button
         data-carta={carta}
         id="cartaBtn"
@@ -36,18 +36,18 @@ const { linkedin, email } = ME.contactInfo;
     <!-- Botón LinkedIn -->
     <Button 
         size="icon" 
-        className="[&_svg]:size-8 h-14 w-14 li-btn flex-none text-n700 dark:text-n200 bg-white dark:bg-black hover:bg-grey-500 dark:hover:bg-n700 transition-all">
-        <a href={linkedin} aria-label="Mi perfil de LinkedIn" target="_blank" rel="noopener noreferrer">
-            <LinkedIn width={24} height={24} />
+        className="h-14 w-14 flex-none bg-black dark:bg-n800 hover:bg-n700 dark:hover:bg-n600 border border-n600 dark:border-n500 transition-all duration-200">
+        <a href={linkedin} aria-label="Mi perfil de LinkedIn" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full h-full">
+            <LinkedIn width={24} height={24} class="text-white" />
         </a>
     </Button>
 
     <!-- Botón Email -->
     <Button 
         size="icon" 
-        className="[&_svg]:size-6 h-14 w-14 email-btn flex-none text-n700 dark:text-n200 bg-white dark:bg-black hover:bg-grey-500 dark:hover:bg-n700 transition-all">
-        <a href={`mailto:${email}`} aria-label="Enviarme un email">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="fill-n700 dark:fill-n200">
+        className="h-14 w-14 flex-none bg-black dark:bg-n800 hover:bg-n700 dark:hover:bg-n600 border border-n600 dark:border-n500 transition-all duration-200">
+        <a href={`mailto:${email}`} aria-label="Enviarme un email" class="flex items-center justify-center w-full h-full">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="fill-white">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
             </svg>
         </a>
@@ -55,7 +55,7 @@ const { linkedin, email } = ME.contactInfo;
 </div>
 
 <script>
-    // Currículum Vitae
+    // Currículum vitae
     const cvBtn = document.getElementById('cvBtn') as HTMLButtonElement;
     const cartaBtn = document.getElementById('cartaBtn') as HTMLButtonElement;
     
