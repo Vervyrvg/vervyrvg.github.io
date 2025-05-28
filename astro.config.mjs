@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
     site: 'https://vervyrvg.github.io',
-    base: 'https://vervyrvg.github.io/blog/',
+    base: 'https://vervyrvg.github.io/projects',
     integrations: [mdx(), react(), tailwind({
         applyBaseStyles: false,
     }), icon(), sitemap()],
