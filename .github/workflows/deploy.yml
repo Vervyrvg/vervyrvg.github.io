@@ -1,25 +1,37 @@
-name: Deploy Astro Site
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
         with:
-          node-version: 20  # Requerido para Astro
-          
-      - run: npm ci
-      - run: npm run build
-      
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          package-manager: npm # Cambia a 'pnpm' o 'yarn' si usas otro gestor
+          # path: . # Descomenta si tu proyecto no está en la raíz
+          # node-version: 20 # Opcional: especifica versión de Node
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        
