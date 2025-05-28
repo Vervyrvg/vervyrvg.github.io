@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://vervyrvg.github.io',
-  base: 'https://github.com/Vervyrvg/vervyrvg.github.io', // Corregido: debe ser la ruta base de tu repositorio
+  base: '/', // Corregido: debe ser la ruta base de tu repositorio
   output: 'static', // Necesario para GitHub Pages
   integrations: [
     mdx(),
