@@ -1,25 +1,26 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
+import tailwind from "@astrojs/tailwind";
+import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
-import tailwindcss from "@tailwindcss/vite";
 import AutoImport from "astro-auto-import";
-import { defineConfig } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import config from "./src/config/config.json";
-import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "https://Vervyrvg.github.io",  // Asegúrate de colocar tu dominio aquí
+  site: config.site.base_url ? config.site.base_url : "https://vervyrvg.github.io",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
-  output: "server",  // Salida para el servidor
-
-  vite: { plugins: [tailwindcss()] },
+  output: "static", // Necesario para GitHub Pages
   integrations: [
     react(),
-    sitemap(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     AutoImport({
       imports: [
         "@/shortcodes/Button",
@@ -31,9 +32,10 @@ export default defineConfig({
         "@/shortcodes/Tab",
       ],
     }),
+    icon(),
+    sitemap(),
     mdx(),
   ],
-
   markdown: {
     remarkPlugins: [
       remarkToc,
@@ -45,11 +47,15 @@ export default defineConfig({
       ],
     ],
     shikiConfig: {
-      theme: "one-dark-pro",  // Tema de syntax highlighting
+      theme: "one-dark-pro",
       wrap: true,
     },
     extendDefaultPlugins: true,
   },
-
-  adapter: vercel(),  // Si estás usando Vercel, también puedes añadir el adaptador de Vercel
+  experimental: {
+    svg: true,
+  },
+  build: {
+    format: 'directory'
+  }
 });
