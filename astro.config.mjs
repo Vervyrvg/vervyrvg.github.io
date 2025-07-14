@@ -8,13 +8,13 @@ import sitemap from "@astrojs/sitemap";
 import AutoImport from "astro-auto-import";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
-import config from "./src/config/config.json";
+import { SITE } from "./src/config.ts";
 
 // https://astro.build/config
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "https://vervyrvg.github.io",
-  base: config.site.base_path ? config.site.base_path : "/",
-  trailingSlash: config.site.trailing_slash ? "always" : "never",
+  site: "https://vervyrvg.github.io",
+  base: "/",
+  trailingSlash: "never",
   output: "static", // Necesario para GitHub Pages
   integrations: [
     react(),
@@ -51,9 +51,6 @@ export default defineConfig({
       wrap: true,
     },
     extendDefaultPlugins: true,
-  },
-  experimental: {
-    svg: true,
   },
   build: {
     format: 'directory'
